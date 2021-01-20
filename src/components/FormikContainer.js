@@ -28,6 +28,7 @@ const FormikContainer = () => {
     radioOption: '',
     checkboxOption: [],
     birthDate: null,
+    multiSelectOption: [],
   };
   const validationSchema = Yup.object({
     email: Yup.string().required('Required'),
@@ -54,6 +55,13 @@ const FormikContainer = () => {
           <FormikControl control='checkbox' label='Checkbox topics' name='checkboxOption' options={checkboxOptions} />
           {/* Date Picker */}
           <FormikControl control='date' label='Pick a date' name='birthDate' />
+          {/* Multi-select */}
+          <FormikControl
+            control='multi-select'
+            label='Select multiple options'
+            name='multiSelectOption'
+            options={dropdownOptions}
+          />
           <button type='submit'> Submit </button>
           {/* ========================================================= */}
           <br />
