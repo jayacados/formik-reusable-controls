@@ -11,6 +11,12 @@ const FormikContainer = () => {
     { key: 'Option 2', value: 'dOption2' },
     { key: 'Option 3', value: 'dOption3' },
   ];
+  const multiSelectOptions = [
+    { label: 'Select an option', value: '' },
+    { label: 'Option 1', value: 'dOption1' },
+    { label: 'Option 2', value: 'dOption2' },
+    { label: 'Option 3', value: 'dOption3' },
+  ];
   const radioOptions = [
     { key: 'Option 1', value: 'rOption1' },
     { key: 'Option 2', value: 'rOption2' },
@@ -60,7 +66,7 @@ const FormikContainer = () => {
             control='multi-select'
             label='Select multiple options'
             name='multiSelectOption'
-            options={dropdownOptions}
+            options={multiSelectOptions}
           />
           <button type='submit'> Submit </button>
           {/* ========================================================= */}
