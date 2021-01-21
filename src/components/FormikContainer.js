@@ -35,6 +35,7 @@ const FormikContainer = () => {
     checkboxOption: [],
     birthDate: null,
     multiSelectOption: [],
+    textAreaMentionsDescription: '',
   };
   const validationSchema = Yup.object({
     email: Yup.string().required('Required'),
@@ -44,6 +45,7 @@ const FormikContainer = () => {
     checkboxOption: Yup.array().length('1', 'Must check at least one').required('Required'),
     birthDate: Yup.date().required('Required').nullable(),
     multiSelectOption: Yup.array().min(3, 'Pick at least 3 tags').required('Required'),
+    textAreaMentionsDescription: Yup.string().required('Required'),
   });
   const onSubmit = values => console.log('Form data', values);
   return (
@@ -69,6 +71,14 @@ const FormikContainer = () => {
             name='multiSelectOption'
             options={multiSelectDropdownOptions}
           />
+          {/* TextArea with Mentions */}
+          <FormikControl
+            control='textarea-mentions'
+            type='description'
+            label='Description with Mentions'
+            name='textAreaMentionsDescription'
+          />
+          {/* ========================================================= */}
           <button type='submit'> Submit </button>
           {/* ========================================================= */}
           <br />

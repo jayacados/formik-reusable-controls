@@ -6,6 +6,7 @@ import TextArea from './components/TextArea';
 import Checkbox from './components/Checkbox';
 import DatePicker from './components/DatePicker';
 import MultiSelect from './components/MultiSelect';
+import TextAreaMentions from './components/TextAreaMentions';
 
 const FormikControl = props => {
   const { control, ...rest } = props;
@@ -24,6 +25,8 @@ const FormikControl = props => {
       return <DatePicker {...rest} />;
     case 'multi-select':
       return <MultiSelect {...rest} />;
+    case 'textarea-mentions':
+      return <TextAreaMentions {...rest} />;
     default:
       return null;
   }

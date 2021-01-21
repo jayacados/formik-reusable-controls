@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, ErrorMessage } from 'formik';
 import TextError from './TextError';
-import CustomMultiSelect from './CustomMultiSelect';
+import CustomMultiSelect from './sub-components/CustomMultiSelect';
 
 const Select = props => {
   const { label, name, options, ...rest } = props;
