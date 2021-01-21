@@ -2,9 +2,9 @@ import React from 'react';
 import Select from 'react-select';
 
 export const CustomSelect = ({ placeholder, field, form, options, isMulti = false }) => {
-  console.log('options', options);
-  console.log('field', field);
-  console.log('form', form);
+  // console.log('options', options);
+  // console.log('field', field);
+  // console.log('form', form);
 
   const onChange = option => {
     if (option) {
@@ -14,15 +14,15 @@ export const CustomSelect = ({ placeholder, field, form, options, isMulti = fals
     }
   };
 
-  const getValue = () => {
-    if (options) {
-      return isMulti
-        ? options.filter(option => field.value.indexOf(option.value) >= 0)
-        : options.find(option => option.value === field.value);
-    } else {
-      return isMulti ? [] : '';
-    }
-  };
+  // const getValue = () => {
+  //   if (options) {
+  //     return isMulti
+  //       ? options.filter(option => field.value.indexOf(option.value) >= 0)
+  //       : options.find(option => option.value === field.value);
+  //   } else {
+  //     return isMulti ? [] : '';
+  //   }
+  // };
 
   return (
     <Select
