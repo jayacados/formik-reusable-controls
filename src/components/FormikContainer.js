@@ -11,7 +11,7 @@ const FormikContainer = () => {
     { key: 'Option 2', value: 'dOption2' },
     { key: 'Option 3', value: 'dOption3' },
   ];
-  const multiSelectOptions = [
+  const multiSelectDropdownOptions = [
     { label: 'Select an option', value: 'placeholder' },
     { label: 'Option 1', value: 'dOption1' },
     { label: 'Option 2', value: 'dOption2' },
@@ -43,7 +43,7 @@ const FormikContainer = () => {
     radioOption: Yup.string().required('Required'),
     checkboxOption: Yup.array().length('1', 'Must check at least one').required('Required'),
     birthDate: Yup.date().required('Required').nullable(),
-    multiSelectOptions: Yup.array().min(3, 'Pick at least 3 tags'),
+    multiSelectOption: Yup.array().min(3, 'Pick at least 3 tags').required('Required'),
   });
   const onSubmit = values => console.log('Form data', values);
   return (
@@ -67,7 +67,7 @@ const FormikContainer = () => {
             control='multi-select'
             label='Select multiple options'
             name='multiSelectOption'
-            options={multiSelectOptions}
+            options={multiSelectDropdownOptions}
           />
           <button type='submit'> Submit </button>
           {/* ========================================================= */}
