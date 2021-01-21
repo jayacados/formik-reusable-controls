@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MentionsInput, Mention } from 'react-mentions';
 
 // helpers
@@ -7,9 +7,6 @@ import defaultStyle from './defaultStyle';
 import defaultMentionStyle from './defaultMentionStyle';
 
 const CustomTextAreaMentions = ({ field, form, attr }) => {
-  console.log('field', field);
-  console.log('form', form);
-
   const onChange = e => {
     if (e) {
       form.setFieldValue(field.name, e.target.value);
