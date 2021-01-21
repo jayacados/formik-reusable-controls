@@ -3,7 +3,13 @@ import Select from 'react-select';
 
 export const CustomSelect = ({ placeholder, field, form, options, isMulti = false }) => {
   const onChange = option => {
-    form.setFieldValue(field.name, isMulti ? option.map(item => item.value) : option.value);
+    console.log('option', option);
+
+    if (option) {
+      form.setFieldValue(field.name, isMulti ? option.map(item => item.value) : option.value);
+    } else {
+      form.setFieldValue(field.name, []);
+    }
   };
 
   const getValue = () => {
