@@ -6,10 +6,7 @@ import merge from './merge';
 import defaultStyle from './defaultStyle';
 import defaultMentionStyle from './defaultMentionStyle';
 
-// fake data for attr as test
-import { attr } from './attrData'; // comment this out when using real data
-
-const CustomTextAreaMentions = ({ field, form }) => {
+const CustomTextAreaMentions = ({ field, form, attr }) => {
   console.log('field', field);
   console.log('form', form);
 

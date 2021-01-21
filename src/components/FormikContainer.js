@@ -5,6 +5,9 @@ import * as Yup from 'yup';
 import FormikControl from '../Formik/FormikControl';
 
 const FormikContainer = () => {
+  /**
+   * fake data
+   */
   const dropdownOptions = [
     { key: 'Select an option', value: 'placeholder' },
     { key: 'Option 1', value: 'dOption1' },
@@ -27,6 +30,32 @@ const FormikContainer = () => {
     { key: 'Option 2', value: 'cOption2' },
     { key: 'Option 3', value: 'cOption3' },
   ];
+  const attr = [
+    {
+      id: '1',
+      display: '#brand',
+    },
+    {
+      id: '2',
+      display: '#brand_collection',
+    },
+    {
+      id: '3',
+      display: '#color',
+    },
+    {
+      id: '4',
+      display: '#material',
+    },
+    {
+      id: '5',
+      display: '#technique',
+    },
+  ];
+
+  /**
+   * formik
+   */
   const initialValues = {
     email: '',
     description: '',
@@ -47,7 +76,11 @@ const FormikContainer = () => {
     multiSelectOption: Yup.array().min(3, 'Pick at least 3 tags').required('Required'),
     textAreaMentionsDescription: Yup.string().required('Required'),
   });
+  /**
+   * handlers
+   */
   const onSubmit = values => console.log('Form data', values);
+
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
       {formik => (
@@ -77,6 +110,7 @@ const FormikContainer = () => {
             type='description'
             label='Description with Mentions'
             name='textAreaMentionsDescription'
+            attr={attr}
           />
           {/* ========================================================= */}
           <button type='submit'> Submit </button>
