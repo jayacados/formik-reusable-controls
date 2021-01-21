@@ -6,13 +6,13 @@ import FormikControl from '../Formik/FormikControl';
 
 const FormikContainer = () => {
   const dropdownOptions = [
-    { key: 'Select an option', value: '' },
+    { key: 'Select an option', value: 'placeholder' },
     { key: 'Option 1', value: 'dOption1' },
     { key: 'Option 2', value: 'dOption2' },
     { key: 'Option 3', value: 'dOption3' },
   ];
   const multiSelectOptions = [
-    { label: 'Select an option', value: '' },
+    { label: 'Select an option', value: 'placeholder' },
     { label: 'Option 1', value: 'dOption1' },
     { label: 'Option 2', value: 'dOption2' },
     { label: 'Option 3', value: 'dOption3' },
@@ -43,6 +43,7 @@ const FormikContainer = () => {
     radioOption: Yup.string().required('Required'),
     checkboxOption: Yup.array().length('1', 'Must check at least one').required('Required'),
     birthDate: Yup.date().required('Required').nullable(),
+    multiSelectOptions: Yup.array().min(3, 'Pick at least 3 tags'),
   });
   const onSubmit = values => console.log('Form data', values);
   return (
