@@ -27,7 +27,7 @@ export const CustomSelect = ({ placeholder, field, form, options, isMulti = fals
   return (
     <Select
       name={field.name}
-      value={field.value['multiSelectOption']}
+      value={form.values[field.name]}
       onChange={onChange}
       placeholder={placeholder}
       options={options}
